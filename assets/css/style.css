@@ -1106,9 +1106,21 @@ section {
   }
 }
 /*  */
-#footer,#facts{
+#footer,#facts,#portfolio,.portfolio,#services,.services,#testimonials{
   display: none;
 }
 ::-webkit-scrollbar {
   display: none;
+}
+.send_whatsapp{
+  color: #25d366 !important;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 0 #25d366;
+  border: 1px solid #25d366;
+}
+.send_whatsapp .bx{
+  font-size: 25px;
+  vertical-align: bottom;
+  margin-right: 5px;
 }
