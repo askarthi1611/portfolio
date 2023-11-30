@@ -241,7 +241,8 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  /* background: url("../img/hero-bg.jpg") top center; */
+  background: url("https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg");
+  /* background: url("https://img.freepik.com/free-vector/realistic-background-futuristic-style_23-2149129125.jpg"); */
   /* background: url("../img/testimonials/ask.jpeg") top right; */
   background-size: cover;
 }
