@@ -700,7 +700,7 @@
               let subject = document.getElementById('subject').value;
               let message = document.getElementById('message').value;
               let newL = '%0A'
-              let str = `https://api.whatsapp.com/send/?phone=7708550202&text=Hai+Karthikeyan${newL}I am *${name.trim()}*,${newL} *Subject :* ${subject}${newL} *Message :* ${message}&type=phone_number&app_absent=0`;
+              let str = `https://api.whatsapp.com/send/?phone=7708550202&text=Hai+Karthikeyan${newL}I am *${name.trim()}*,${newL} *Subject :* ${subject.trim()}${newL} *Message :* ${message.trim()}&type=phone_number&app_absent=0`;
               if (name != '' && email != '' && subject != '' && message != '') {
                 window.open(str)
               } else {
