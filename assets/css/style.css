@@ -1118,7 +1118,7 @@ section {
   }
 }
 /*  */
-#footer,#facts,#portfolio,.portfolio,#services,.services,#testimonials{
+#footer,#facts,#portfolio,.portfolio,#services,.services,#testimonials,#skills_org{
   display: none;
 }
 ::-webkit-scrollbar {
@@ -1138,4 +1138,23 @@ section {
 }
 .chTooltip img,.chClickToSms img{
   display: none;
+}
+.language-card {
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 1rem 0;
+  width: 200px;
+}
+.language-card>img {
+  width: 2.3rem;
+}
+.language-card>h6 {
+  padding-top: 0.2rem;
 }
