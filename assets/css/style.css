@@ -1136,6 +1136,6 @@ section {
   vertical-align: bottom;
   margin-right: 5px;
 }
-.chTooltip,.chClickToSms {
+.chTooltip img,.chClickToSms img{
   display: none;
 }
