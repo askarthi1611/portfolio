@@ -111,7 +111,8 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>16 Nov 1999</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                    <span>https://ask16.netlify.com</span></li>
+                    <span>https://ask16.netlify.com</span>
+                  </li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 7708550202</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Mylapore ,Chennai.</span></li>
                 </ul>
@@ -121,7 +122,8 @@
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong>
-                    <span>askarthi1611@gmail.com</span></li>
+                    <span>askarthi1611@gmail.com</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -694,6 +696,19 @@
             </div>
           </div>
           <script>
+            document.addEventListener('contextmenu', function (e) {
+              e.preventDefault();
+            });
+            document.addEventListener('keydown', (event) => {
+              let name = event.key;
+              console.log(name);
+              let arr = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Backspace', 'Meta']
+              for (let i = 0; i < arr.length; i++) {
+                if (arr.includes(name)) {
+                  event.preventDefault();
+                }
+              }
+            })
             function myFunction() {
               let name = document.getElementById('name').value;
               let email = document.getElementById('email').value;
