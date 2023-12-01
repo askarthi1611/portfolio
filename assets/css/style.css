@@ -946,8 +946,19 @@ section {
   text-align: left;
   padding: 15px;
   font-weight: 600;
+  animation: blink 0.5s linear infinite;
 }
-
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
@@ -1125,6 +1136,6 @@ section {
   vertical-align: bottom;
   margin-right: 5px;
 }
-.phone img {
+.chTooltip,.chClickToSms {
   display: none;
 }
