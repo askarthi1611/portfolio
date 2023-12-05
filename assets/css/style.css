@@ -1118,7 +1118,8 @@ section {
   }
 }
 /*  */
-#footer,#facts,#portfolio,.portfolio,#services,.services,#testimonials,#skills_org{
+/* #portfolio,.portfolio */
+#footer,#facts,#services,.services,#testimonials,#skills_org{
   display: none;
 }
 ::-webkit-scrollbar {
@@ -1157,4 +1158,9 @@ section {
 }
 .language-card>h6 {
   padding-top: 0.2rem;
+}
+.glightbox-clean .gslide-title {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Poppins';
 }
