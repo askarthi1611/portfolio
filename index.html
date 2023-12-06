@@ -496,26 +496,12 @@
               <img src="assets/img/portfolio/mhl1.PNG" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/mhl1.PNG" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Metropolis"><i class="bx bx-detail"></i></a>
+                  title="Metropolis - UI Only "><i class="bx bx-detail"></i></a>
                 <a href="https://mhldoscatalogueuat.metropolisindia.com/" target="_blank" title="Go to page"><i
                     class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-office">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/byn.PNG" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/byn.PNG" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="ByNature"><i class="bx bx-detail"></i></a>
-                <a href="https://bynature.isolvedev.in" target="_blank" title="Go to page"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/ask16.PNG" class="img-fluid" alt="">
@@ -528,7 +514,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/ask07.PNG" class="img-fluid" alt="">
@@ -541,7 +526,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/ask02.PNG" class="img-fluid" alt="">
@@ -554,7 +538,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/ask03.PNG" class="img-fluid" alt="">
@@ -567,7 +550,6 @@
               </div>
             </div>
           </div>
-
           <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
@@ -579,7 +561,6 @@
               </div>
             </div>
           </div> -->
-
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/ask99.PNG" class="img-fluid" alt="">
@@ -604,6 +585,18 @@
               </div>
             </div>
           </div>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-office">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/byn.PNG" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/byn.PNG" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="ByNature - UI Only"><i class="bx bx-detail"></i></a>
+                <a href="https://bynature.isolvedev.in" target="_blank" title="Go to page"><i
+                    class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
           <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
@@ -861,7 +854,7 @@
           </div>
           <script>
             document.addEventListener('contextmenu', function (e) {
-              e.preventDefault();
+              // e.preventDefault();
             });
             window.addEventListener('beforeunload', function (event) {
               // Cancel the event
@@ -873,12 +866,13 @@
             document.addEventListener('keydown', (event) => {
               let name = event.key;
               console.log(name);
-              let arr = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Backspace', 'Meta']
+              let arr = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Backspace', 'Meta', 'Shift', 'I', 'J', 'W' ,'t' ,'T']
               for (let i = 0; i < arr.length; i++) {
                 if (arr.includes(name)) {
                   event.preventDefault();
                 }
               }
+
             })
             function myFunction() {
               let name = document.getElementById('name').value;
