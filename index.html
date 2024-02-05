@@ -830,15 +830,6 @@
                   <label for="name">Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" required>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
               <div class="form-group">
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" id="message" rows="10" required></textarea>
@@ -876,12 +867,10 @@
             })
             function myFunction() {
               let name = document.getElementById('name').value;
-              let email = document.getElementById('email').value;
-              let subject = document.getElementById('subject').value;
               let message = document.getElementById('message').value;
               let newL = '%0A'
-              let str = `https://api.whatsapp.com/send/?phone=7708550202&text=Hai+Karthikeyan${newL}I am *${name.trim()}*,${newL} *Subject :* ${subject.trim()}${newL} *Message :* ${message.trim()}&type=phone_number&app_absent=0`;
-              if (name != '' && email != '' && subject != '' && message != '') {
+              let str = `https://api.whatsapp.com/send/?phone=7708550202&text=Hai+Karthikeyan${newL}I am *${name.trim()}*,${newL} *Message :* ${message.trim()}&type=phone_number&app_absent=0`;
+              if (name != '' && message != '') {
                 window.open(str)
               } else {
                 let err = document.querySelector('.error-message');
