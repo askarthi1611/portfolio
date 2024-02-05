@@ -45,14 +45,13 @@
         <img src="./assets/img/testimonials/sk.jpeg" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Karthikeyan</a></h1>
         <div class="social-links mt-3 text-center">
-          <a target="_blank"
-            href="https://api.whatsapp.com/send/?phone=7708550202&text=Hai+Karthikeyan&type=phone_number&app_absent=0"
+          <a onclick="open_link('https://api.whatsapp.com/send/?phone=7708550202&text=Hai&type=phone_number&app_absent=0')"
             class="twitter"><i class="bx bxl-whatsapp"></i></a>
-          <a target="_blank" href="https://www.facebook.com/s.karthi1611" class="facebook"><i
+          <a onclick="open_link('https://www.facebook.com/s.karthi1611')" class="facebook"><i
               class="bx bxl-facebook"></i></a>
-          <a target="_blank" href="https://www.instagram.com/karthikeyans1611/" class="instagram"><i
+          <a onclick="open_link('https://www.instagram.com/karthikeyans1611/')" class="instagram"><i
               class="bx bxl-instagram"></i></a>
-          <a target="_blank" href="https://github.com/askarthi1611" class="google-plus"><i
+          <a onclick="open_link('https://github.com/askarthi1611')" class="google-plus"><i
               class="bx bxl-github"></i></a>
           <a href="mailto:askarthi1611@gmail.com" class="linkedin"><i class="bx bxl-gmail"></i></a>
         </div>
@@ -497,7 +496,7 @@
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/mhl1.PNG" data-gallery="portfolioGallery" class="portfolio-lightbox"
                   title="Metropolis - UI/UX Only "><i class="bx bx-detail"></i></a>
-                <a href="https://mhldoscatalogueuat.metropolisindia.com/" target="_blank" title="Go to page"><i
+                <a onclick='open_link("https://mhldoscatalogueuat.metropolisindia.com/")' title="Go to page"><i
                     class="bx bx-link"></i></a>
               </div>
             </div>
@@ -508,8 +507,8 @@
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/ask16.PNG" data-gallery="portfolioGallery" class="portfolio-lightbox"
                   title="A.S.K"><i class="bx bx-detail"></i></a>
-                <a href="https://ask16.netlify.com" target="_blank" title="Go to page"><i class="bx bx-link"></i></a>
-                <a href="https://github.com/askarthi1611/is_angular" target="_blank" title="Go to Github"><i
+                <a onclick='open_link("https://ask16.netlify.com")' title="Go to page"><i class="bx bx-link"></i></a>
+                <a onclick='open_link("https://github.com/askarthi1611/is_angular")' title="Go to Github"><i
                     class="bx bxl-github"></i></a>
               </div>
             </div>
@@ -786,7 +785,7 @@
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
               <a
-                href="https://www.google.com/maps/place/16,+Jethnagar+3rd+Cross+St,+Jeth+Nagar,+Mandaveli,+Chennai,+Tamil+Nadu+600028/@13.0276996,80.2608104,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5267cfad3ad2d5:0x17f857d5bfa32977!8m2!3d13.0276944!4d80.2633853!16s%2Fg%2F11hjxqbvvx?entry=ttu">
+                onclick='open_link("https://www.google.com/maps/place/16,+Jethnagar+3rd+Cross+St,+Jeth+Nagar,+Mandaveli,+Chennai,+Tamil+Nadu+600028/@13.0276996,80.2608104,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5267cfad3ad2d5:0x17f857d5bfa32977!8m2!3d13.0276944!4d80.2633853!16s%2Fg%2F11hjxqbvvx?entry=ttu")'>
                 <div class="address">
                   <i class="bi bi-geo-alt"></i>
                   <h4>Location:</h4>
@@ -801,7 +800,7 @@
                 </div>
               </a>
               <a
-                href="https://api.whatsapp.com/send/?phone=7708550202&text=Hai+Karthikeyan&type=phone_number&app_absent=0">
+                onclick='open_link("https://api.whatsapp.com/send/?phone=7708550202&text=Hai&type=phone_number&app_absent=0")'>
                 <div class="email">
                   <i class="bi bi-whatsapp"></i>
                   <h4>Whatsapp:</h4>
@@ -826,65 +825,73 @@
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
             <div class="php-email-form">
               <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group">
                   <label for="name">Your Name</label>
                   <input type="text" name="name" class="form-control" id="name" required>
                 </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" id="message" rows="10" required></textarea>
+                <div class="form-group">
+                  <label for="name">Message</label>
+                  <textarea class="form-control" name="message" id="message" rows="10" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message">Please Enter All Fields</div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <div class="text-center"><button class="btn send_whatsapp" onclick="myFunction()"><i
+                      class="bx bxl-whatsapp"></i> Send Message via whatsapp</button></div>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message">Please Enter All Fields</div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button class="btn send_whatsapp" onclick="myFunction()"><i
-                    class="bx bxl-whatsapp"></i> Send Message via whatsapp</button></div>
             </div>
-          </div>
-          <script>
-            document.addEventListener('contextmenu', function (e) {
-              // e.preventDefault();
-            });
-            window.addEventListener('beforeunload', function (event) {
-              // Cancel the event
-              event.preventDefault();
-              // Chrome requires returnValue to be set
-              event.returnValue = '';
-            });
+            <script>
+              document.addEventListener('contextmenu', function (e) {
+                // e.preventDefault();
+              });
+              // window.addEventListener('beforeunload', function (event) {
+              //   console.log(event);
+              //   event.preventDefault();
+              //   event.returnValue = '';
+              // });
+              function open_link(url) {
+                var screenWidth = window.screen.width;
+                var screenHeight = window.screen.height;
+                var widthPercentage = 75; // 75% of the screen width
+                var heightPercentage = 75; // 75% of the screen height
+                var newWidth = (screenWidth * widthPercentage) / 100;
+                var newHeight = (screenHeight * heightPercentage) / 100;
+                window.open(url, 'New Window', 'width=' + newWidth + ', height=' + newHeight);
+                window.open(url, '', "width=300,height=300")
+              }
+              document.addEventListener('keydown', (event) => {
+                let name = event.key;
+                console.log(name);
+                let arr = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Backspace', 'Meta', 'Shift', 'I', 'J', 'W', 't', 'T']
+                for (let i = 0; i < arr.length; i++) {
+                  if (arr.includes(name)) {
+                    event.preventDefault();
+                  }
+                }
 
-            document.addEventListener('keydown', (event) => {
-              let name = event.key;
-              console.log(name);
-              let arr = ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Backspace', 'Meta', 'Shift', 'I', 'J', 'W' ,'t' ,'T']
-              for (let i = 0; i < arr.length; i++) {
-                if (arr.includes(name)) {
-                  event.preventDefault();
+              })
+              function myFunction() {
+                let name = document.getElementById('name').value;
+                let message = document.getElementById('message').value;
+                let newL = '%0A'
+                let str = `https://api.whatsapp.com/send/?phone=7708550202&text=Hai${newL}I am *${name.trim()}*,${newL}${newL} ${message.trim()}&type=phone_number&app_absent=0`;
+                if (name != '' && message != '') {
+                  window.open(str)
+                } else {
+                  let err = document.querySelector('.error-message');
+                  err.style.display = 'block';
+                  setTimeout(() => {
+                    err.style.display = 'none';
+                  }, 5000);
                 }
               }
+            </script>
 
-            })
-            function myFunction() {
-              let name = document.getElementById('name').value;
-              let message = document.getElementById('message').value;
-              let newL = '%0A'
-              let str = `https://api.whatsapp.com/send/?phone=7708550202&text=Hai+Karthikeyan${newL}I am *${name.trim()}*,${newL} *Message :* ${message.trim()}&type=phone_number&app_absent=0`;
-              if (name != '' && message != '') {
-                window.open(str)
-              } else {
-                let err = document.querySelector('.error-message');
-                err.style.display = 'block';
-                setTimeout(() => {
-                  err.style.display = 'none';
-                }, 5000);
-              }
-            }
-          </script>
+          </div>
 
         </div>
-
-      </div>
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
@@ -922,4 +929,4 @@
 </body>
 
 </html>
-<!-- https://api.whatsapp.com/send/?phone=7708550202&text=Hai+Karthikeyan%0Ahi%20sk&type=phone_number&app_absent=0 -->
+<!-- https://api.whatsapp.com/send/?phone=7708550202&text=Hai%0Ahi%20sk&type=phone_number&app_absent=0 -->
