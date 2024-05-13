@@ -168,7 +168,7 @@ h6 {
   list-style: none;
 }
 
-.nav-menu>ul>li {
+.nav-menu > ul > li {
   position: relative;
   white-space: nowrap;
 }
@@ -194,7 +194,7 @@ h6 {
 .nav-menu a:hover,
 .nav-menu .active,
 .nav-menu .active:focus,
-.nav-menu li:hover>a {
+.nav-menu li:hover > a {
   text-decoration: none;
   color: #fff;
 }
@@ -202,7 +202,7 @@ h6 {
 .nav-menu a:hover i,
 .nav-menu .active i,
 .nav-menu .active:focus i,
-.nav-menu li:hover>a i {
+.nav-menu li:hover > a i {
   color: #149ddd;
 }
 
@@ -615,7 +615,7 @@ section {
   background: rgba(20, 157, 221, 0.95);
 }
 
-.portfolio .portfolio-wrap .portfolio-links a+a {
+.portfolio .portfolio-wrap .portfolio-links a + a {
   border-left: 1px solid #37b3ed;
 }
 
@@ -648,7 +648,10 @@ section {
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -656,7 +659,10 @@ section {
   border: 1px solid #149ddd;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #149ddd;
 }
 
@@ -679,7 +685,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -955,13 +961,13 @@ section {
     opacity: 0;
   }
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
   }
 }
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -1016,7 +1022,7 @@ section {
   padding: 10px 15px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   background: #149ddd;
   border: 0;
   padding: 10px 24px;
@@ -1025,7 +1031,7 @@ section {
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: #37b3ed;
 }
 
@@ -1061,11 +1067,11 @@ section {
   font-size: 15px;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #0e2442;
@@ -1121,25 +1127,31 @@ section {
 }
 /*  */
 /* #portfolio,.portfolio */
-#footer,#facts,#services,.services,#testimonials,#skills_org{
+#footer,
+#facts,
+#services,
+.services,
+#testimonials,
+#skills_org {
   display: none;
 }
 ::-webkit-scrollbar {
   display: none;
 }
-.send_whatsapp{
+.send_whatsapp {
   color: #25d366 !important;
   background-color: #f5f5f5;
   border-radius: 20px;
   box-shadow: 0 0 5px 0 #25d366;
   border: 1px solid #25d366;
 }
-.send_whatsapp .bx{
+.send_whatsapp .bx {
   font-size: 25px;
   vertical-align: bottom;
   margin-right: 5px;
 }
-.chTooltip img,.chClickToSms img{
+.chTooltip img,
+.chClickToSms img {
   display: none;
 }
 .language-card {
@@ -1160,26 +1172,26 @@ section {
   gap: 4px;
   min-width: 100px;
 }
-@media screen and (max-width:991) {
-  .language-card{
+@media screen and (max-width: 991) {
+  .language-card {
     min-width: none;
   }
 }
-.language-card:hover{
+.language-card:hover {
   background-color: #f5f5f5;
   box-shadow: 0 0 3px 2px #ccc;
 }
 
-.language-card>img {
+.language-card > img {
   width: 2.3rem;
 }
-.language-card>h6 {
+.language-card > h6 {
   padding-top: 0.2rem;
 }
 .glightbox-clean .gslide-title {
   text-align: center;
   font-size: 30px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 @keyframes zoomInOut {
@@ -1193,15 +1205,33 @@ section {
     transform: scale(1); /* Return to original scale */
   }
 }
-.language-card:hover img{
+.language-card:hover img {
   transform: scale(1.2);
-
-
 }
 
-.cv_link{
+.cv_link {
   position: fixed;
   right: 5px;
   top: 5px;
   z-index: 99999;
+  width: fit-content;
+  background: #3ea3fc;
+  text-align: center;
+  border-radius: 15px;
+  color: #e9e9e9;
+  padding: 3px 15px;
+  font-size: xx-large;
 }
+.cv_link{
+  color:#f5f5f5 !important ;
+}
+@media screen and (max-width: 1199px) {
+  .cv_link {
+    position: fixed; 
+    right: 65px !important;
+    top: 15px !important;
+    z-index: 999; 
+    font-size: x-large;
+  }
+}
+
