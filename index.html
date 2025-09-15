@@ -100,10 +100,17 @@
   <!-- ======= ask_main Section ======= -->
   <section id="ask_main" class="d-flex flex-column justify-content-center align-items-center">
     <div class="ask_main-container" data-aos="fade-in">
-      <h1>Karthikeyan S</h1>
-      <p>I'm <span class="typed" data-typed-items="UI/UX,Web,Front-end,Angular"></span> Developer</p>
+      <h1>
+        Karthikeyan S <small style="font-size: .405em;">(<span class="experienceYears"></span> yrs exp)</small>
+      </h1>
+
+      <p>I'm <span class="typed" data-typed-items="UI/UX,Web,Front-end,Angular"></span>
+        Developer
+        <!-- with <span class="experienceYears"></span> years of experience -->
+      </p>
     </div>
-  </section><!-- End ask_main -->
+  </section>
+  <!-- End ask_main -->
 
   <main id="main">
 
@@ -944,7 +951,7 @@
               if (months === 0) {
                 experienceYears = years; // exact years
               } else {
-                experienceYears = `${years}.${months}`; // years.months format
+                experienceYears = `${years}+`; // years.months format
               }
 
               // Show result
