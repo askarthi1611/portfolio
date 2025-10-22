@@ -55,8 +55,12 @@
 </head>
 
 <body>
-  <a href="http://askarthi.onrender.com/doc/Karthikeyan_S.pdf" target="_blank" download="Karthikeyan_CV.pdf"
+<a class="cv_link" href="resume.html" title="View Resume" target="_blank">
+  <i class="bx bx-file-blank"></i>
+</a>
+  <a style="margin-right: 50px;" href="http://askarthi.onrender.com/doc/Karthikeyan_S.pdf" target="_blank" download="Karthikeyan_CV.pdf"
     class="cv_link">CV</a>
+    
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -540,6 +544,235 @@
     </section><!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
+    <style>
+      /* Container and Section Styling */
+      #portfolio {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+      }
+
+      #portfolio .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      #portfolio .section-header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #212529;
+      }
+
+      #portfolio .section-header p {
+        font-size: 1.1rem;
+        color: #495057;
+      }
+
+      /* Project Card */
+      .project-card {
+        background-color: #ffffff;
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .project-card .project-text {
+        flex: 1 1 400px;
+      }
+
+      .project-card .project-text h4 {
+        color: #e63946;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .project-card .project-text p {
+        color: #495057;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .project-card .project-links a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-right: 15px;
+      }
+
+      .project-card .project-links a:hover {
+        text-decoration: underline;
+      }
+
+      .project-card .project-image {
+        flex: 1 1 350px;
+        text-align: center;
+      }
+
+      .project-card .project-image img {
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.project-card .project-image img {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+}
+
+.project-card .project-text {
+  max-width: 50%;
+}
+
+.project-card .project-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.project-card .project-links a:hover {
+  text-decoration: underline;
+}
+
+      @media (max-width: 992px) {
+        .project-card {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .project-card .project-image {
+          margin-top: 20px;
+        }
+      }
+    </style>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <h1>My Portfolio</h1>
+          <p>Showcasing my Angular, UI/UX, and full-stack projects</p>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-text">
+            <h4>Library Management Application</h4>
+            <p>Full-stack Angular & Node.js application for managing books, tracking issues, and handling user roles
+              efficiently. Features include user authentication, real-time updates, and an intuitive admin dashboard.
+            </p>
+            <div class="project-links">
+              <a href="https://asklib.netlify.app/" target="_blank">🌐 Live Demo</a>
+              <a href="https://github.com/askarthi1611/lib" target="_blank">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="assets/img/portfolio/asklib.png" alt="Library Management Application">
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-text">
+            <h4>Crackers Landing Page</h4>
+            <p>Responsive and SEO-optimized landing page built with HTML, CSS, and JavaScript. Features festive visuals,
+              smooth animations, and fast-loading content for a highly engaging user experience.</p>
+            <div class="project-links">
+              <a href="https://askcrackers.onrender.com/" target="_blank">🌐 Live Demo</a>
+              <a href="https://github.com/askarthi1611/Home" target="_blank">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="assets/img/portfolio/CrackersLanding.png" alt="Crackers Landing Page">
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-text">
+            <h4>Crackers Sales Application</h4>
+            <p>Angular-based application with order tracking, cart management, and REST API integration for seamless
+              sales operations. Includes dynamic dashboards and efficient user interfaces for admin and client
+              management.</p>
+            <div class="project-links">
+              <a href="https://askcrackers99.netlify.app" target="_blank">🌐 Live Demo</a>
+              <a href="https://github.com/askarthi1611/K" target="_blank">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="assets/img/portfolio/CrackersSF.png" alt="Crackers Sales Application">
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="project-text">
+            <h4>Metropolis (UI/UX)</h4>
+            <p>UI/UX Development for Metropolis Healthcare’s catalog. Created a clean, user-friendly interface with
+              accessibility standards. Focused on layout clarity, typography, and responsive design for improved user
+              experience.</p>
+            <div class="project-links">
+              <a href="https://mhldoscatalogueuat.metropolisindia.com/" target="_blank">🌐 Live Site</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="assets/img/portfolio/mhl1.PNG" alt="Metropolis UI/UX">
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="project-card mb-4">
+          <div class="project-text">
+            <h4>MEAN Full-Stack CRUD Operation</h4>
+            <p>Full-stack CRUD application built with MongoDB, Express, Angular, and Node.js. Implements dynamic data
+              management with REST APIs, modular components, and responsive UI for efficient operations.</p>
+            <div class="project-links">
+              <a href="https://ask55.netlify.app/" target="_blank">🌐 Live Demo</a> |
+              <a href="https://github.com/askarthi1611/node-curd" target="_blank">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="assets/img/portfolio/ask55.png" alt="MEAN Full-Stack CRUD Portfolio">
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card mb-4">
+          <div class="project-text">
+            <h4>My Personal Portfolio</h4>
+            <p>Angular-based personal portfolio showcasing projects, skills, and experience. Features a clean UI, smooth
+              navigation, responsive design, and integration with GitHub for project references.</p>
+            <div class="project-links">
+              <a href="https://askarthi.onrender.com" target="_blank">🌐 Live Site</a> |
+              <a href="https://ask99.netlify.app" target="_blank">🌐 Alternate Demo</a> |
+              <a href="https://github.com/askarthi1611/portfolio" target="_blank">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="assets/img/portfolio/ask99.PNG" alt="Personal Portfolio Project">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- End Portfolio Section -->
+    <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container">
 
@@ -580,9 +813,10 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/CrackersLanding.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/CrackersLanding.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Crackers Landing Page"><i class="bx bx-detail"></i></a>
-                <a onclick='open_link("https://askcrackers.onrender.com/")' title="Go to page"><i class="bx bx-link"></i></a>
+                <a href="assets/img/portfolio/CrackersLanding.png" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Crackers Landing Page"><i class="bx bx-detail"></i></a>
+                <a onclick='open_link("https://askcrackers.onrender.com/")' title="Go to page"><i
+                    class="bx bx-link"></i></a>
                 <a onclick='open_link("https://github.com/askarthi1611/Home")' title="Go to Github"><i
                     class="bx bxl-github"></i></a>
               </div>
@@ -594,7 +828,8 @@
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/CrackersSF.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                   title="Crackers Sales Application"><i class="bx bx-detail"></i></a>
-                <a onclick='open_link("https://askcrackers99.netlify.app")' title="Go to page"><i class="bx bx-link"></i></a>
+                <a onclick='open_link("https://askcrackers99.netlify.app")' title="Go to page"><i
+                    class="bx bx-link"></i></a>
                 <a onclick='open_link("https://github.com/askarthi1611/K")' title="Go to Github"><i
                     class="bx bxl-github"></i></a>
               </div>
@@ -690,7 +925,7 @@
               <img src="assets/img/portfolio/ask55.png" class="img-fluid" alt="">
               <div class="portfolio-links">
                 <a href="assets/img/portfolio/ask55.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="Node CRUD Operation"><i class="bx bx-detail"></i></a>
+                  title="MEAN Full-Stack CRUD Operation"><i class="bx bx-detail"></i></a>
                 <a onclick='open_link("https://ask55.netlify.app/")' title="Go to page"><i class="bx bx-link"></i></a>
                 <a onclick='open_link("https://github.com/askarthi1611/node-curd")' title="Go to Github"><i
                     class="bx bxl-github"></i></a>
@@ -737,7 +972,8 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>
+    <!-- End Portfolio Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
