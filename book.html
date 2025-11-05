@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic PDF Tab Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .tabs {
+      display: flex;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .tab {
+      padding: 14px 16px;
+      color: white;
+      cursor: pointer;
+      background-color: #333;
+      border: none;
+      outline: none;
+      transition: background-color 0.3s;
+      flex-shrink: 0;
+    }
+    .tab:hover {
+      background-color: #555;
+    }
+    .tab.active {
+      background-color: #0078d7;
+    }
+    iframe {
+      width: 100%;
+      height: calc(100vh - 50px);
+      border: none;
+      display: none;
+    }
+    iframe.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="tabs" id="tabs"></div>
+  <div id="viewer"></div>
+
+  <script>
+    // 👇 Define your PDF files here dynamically
+    const pdfFiles = [
+      "doc/Interview.pdf",
+      "doc/book.pdf",
+      "doc/Karthikeyan_S.pdf",
+      "doc/Karthikeyan_S1.pdf",
+      "doc/Karthikeyan_S2.pdf"
+    ];
+
+    const tabsContainer = document.getElementById('tabs');
+    const viewerContainer = document.getElementById('viewer');
+
+    pdfFiles.forEach((file, index) => {
+      const fileName = file.split('/').pop().replace('.pdf', '');
+      
+      // Create tab button
+      const tab = document.createElement('button');
+      tab.classList.add('tab');
+      if (index === 0) tab.classList.add('active');
+      tab.textContent = fileName;
+      tab.addEventListener('click', () => showPDF(index));
+      tabsContainer.appendChild(tab);
+
+      // Create iframe viewer
+      const iframe = document.createElement('iframe');
+      iframe.src = file;
+      if (index === 0) iframe.classList.add('active');
+      viewerContainer.appendChild(iframe);
+    });
+
+    function showPDF(index) {
+      const iframes = document.querySelectorAll('iframe');
+      const tabs = document.querySelectorAll('.tab');
+      iframes.forEach((iframe, i) => iframe.classList.toggle('active', i === index));
+      tabs.forEach((tab, i) => tab.classList.toggle('active', i === index));
+    }
+  </script>
+</body>
+</html>
