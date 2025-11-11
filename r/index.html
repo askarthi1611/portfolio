@@ -51,6 +51,7 @@
     const pdfFiles = [
       "doc/Interview.pdf",
       "doc/book.pdf",
+      'doc/Realtime Interview QA.pdf',
       "doc/Karthikeyan_S.pdf",
       "doc/Karthikeyan_S1.pdf",
       "doc/Karthikeyan_S2.pdf"
@@ -72,7 +73,7 @@
 
       // Create iframe viewer
       const iframe = document.createElement('iframe');
-      iframe.src = file;
+      iframe.src = './../'+file;
       if (index === 0) iframe.classList.add('active');
       viewerContainer.appendChild(iframe);
     });
