@@ -55,12 +55,12 @@
 </head>
 
 <body>
-<a class="cv_link" href="./r/resume.html" title="View Resume" target="_blank">
-  <i class="bx bx-file-blank"></i>
-</a>
-  <a style="margin-right: 50px;" href="http://askarthi.onrender.com/doc/Karthikeyan_S.pdf" target="_blank" download="Karthikeyan_CV.pdf"
-    class="cv_link">CV</a>
-    
+  <a class="cv_link" href="./r/resume.html" title="View Resume" target="_blank">
+    <i class="bx bx-file-blank"></i>
+  </a>
+  <a style="margin-right: 50px;" href="http://askarthi.onrender.com/doc/Karthikeyan_S.pdf" target="_blank"
+    download="Karthikeyan_CV.pdf" class="cv_link">CV</a>
+
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
@@ -543,9 +543,280 @@
       </div>
     </section><!-- End Resume Section -->
 
+
+    <!-- Add Previous Project -->
+    <style>
+      .projects-section {
+        padding: 60px 20px;
+        background: #f9fafc;
+        text-align: center;
+      }
+
+      .projects-section h2 {
+        font-size: 2.2rem;
+        color: #222;
+        margin-bottom: 15px;
+      }
+
+      .projects-section p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        color: #555;
+      }
+
+      .skills {
+        margin-bottom: 40px;
+      }
+
+      .skills ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .skills li {
+        background: #e5f1ff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        color: #007bff;
+        font-weight: 500;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .project-card h4 {
+        margin: 15px 0 8px;
+        color: #222;
+      }
+
+      .project-card p {
+        padding: 0 15px 10px;
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      .project-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+      }
+
+
+      .project-images img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      .project-card h4 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        color: #222;
+      }
+
+      .project-card p {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 8px;
+      }
+
+      .previousproject .project-images {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        scroll-behavior: smooth;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .previousproject .project-card {
+        display: flex;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+        justify-content: center;
+        flex-direction: column;
+        width: 575px;
+        justify-content: center;
+      }
+
+      .previousproject .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row;
+      }
+    </style>
+    <!-- <section id="projects" class="projects-section"> -->
+    <section id="portfolio" class="projects-section previousproject">
+      <h2>Turning Mockups into Reality – My UI Work</h2>
+      <p>
+        Specialized in transforming high-fidelity mockup designs from tools like <strong>Figma</strong> and
+        <strong>Adobe XD</strong>
+        into fully functional, responsive, and production-ready web applications. Focused on delivering
+        clean, maintainable Angular UI code aligned with design systems and business goals.
+      </p>
+
+      <div class="skills">
+        <h3>Skills</h3>
+        <ul>
+          <li>Angular UI Development</li>
+          <li>Responsive & Mobile-First Development</li>
+          <li>Figma / Adobe XD to Code Implementation</li>
+          <li>Reusable Component Architecture</li>
+          <li>Progressive Web Apps (PWA)</li>
+          <li>Cross-Browser Compatibility</li>
+          <li>Agile & Team Collaboration</li>
+          <li>UI/UX Consistency and Accessibility</li>
+        </ul>
+      </div>
+
+<div class="projects-grid">
+
+  <!-- Project 1 -->
+  <div class="project-card">
+    <div class="project-images">
+      <a href="assets/img/previous Project/kvb1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="KVB Bank User Management - Screenshot 1">
+        <img src="assets/img/previous Project/kvb1.png" alt="KVB Bank Dashboard Screenshot 1">
+      </a>
+      <a href="assets/img/previous Project/kvb2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="KVB Bank User Management - Screenshot 2">
+        <img src="assets/img/previous Project/kvb2.png" alt="KVB Bank Dashboard Screenshot 2">
+      </a>
+    </div>
+    <h4>KVB Bank User Management</h4>
+    <p><strong>Role:</strong> Angular UI Developer</p>
+    <p>
+      Translated Figma mockups into responsive Angular components for user management and workflow approval dashboards.
+    </p>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project-card">
+    <div class="project-images">
+      <a href="assets/img/previous Project/break1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Break Management System - Screenshot">
+        <img src="assets/img/previous Project/break1.png" alt="Break Management Dashboard Screenshot">
+      </a>
+    </div>
+    <h4>Break Management System</h4>
+    <p><strong>Role:</strong> Angular UI Developer</p>
+    <p>
+      Implemented UI layouts and data-driven dashboards from Adobe XD mockups, tracking employee login and break analytics.
+    </p>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project-card">
+    <div class="project-images">
+      <a href="assets/img/previous Project/mhl1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MHL Metropolis Management - Screenshot 1">
+        <img src="assets/img/previous Project/mhl1.png" alt="MHL Metropolis Dashboard Screenshot 1">
+      </a>
+      <a href="assets/img/previous Project/mhl2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MHL Metropolis Management - Screenshot 2">
+        <img src="assets/img/previous Project/mhl2.png" alt="MHL Metropolis Dashboard Screenshot 2">
+      </a>
+      <a href="assets/img/previous Project/mhl3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MHL Metropolis Management - Screenshot 3">
+        <img src="assets/img/previous Project/mhl3.png" alt="MHL Metropolis Dashboard Screenshot 3">
+      </a>
+    </div>
+    <h4>MHL Metropolis Management</h4>
+    <p><strong>Role:</strong> Angular UI Developer</p>
+    <p>
+      Implemented modern, responsive dashboards by converting Figma designs into live Angular pages for stock and inventory management.
+    </p>
+  </div>
+
+  <!-- Project 4 -->
+  <div class="project-card">
+    <div class="project-images">
+      <a href="assets/img/previous Project/mask1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Unity Aadhar Masking - Screenshot">
+        <img src="assets/img/previous Project/mask1.png" alt="Unity Aadhar Masking Dashboard Screenshot">
+      </a>
+    </div>
+    <h4>Unity Aadhar Masking</h4>
+    <p><strong>Role:</strong> Angular UI Developer</p>
+    <p>
+      Developed front-end modules based on provided UI mockups to monitor masking processes and real-time reports.
+    </p>
+  </div>
+
+  <!-- Project 5 -->
+  <div class="project-card">
+    <div class="project-images">
+      <a href="assets/img/previous Project/esg1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ESG Compliance Dashboard - Screenshot 1">
+        <img src="assets/img/previous Project/esg1.png" alt="ESG Dashboard Screenshot 1">
+      </a>
+      <a href="assets/img/previous Project/esg2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ESG Compliance Dashboard - Screenshot 2">
+        <img src="assets/img/previous Project/esg2.png" alt="ESG Dashboard Screenshot 2">
+      </a>
+    </div>
+    <h4>ESG Compliance Dashboard</h4>
+    <p><strong>Role:</strong> Angular UI Developer</p>
+    <p>
+      Converted design prototypes into interactive Angular dashboards for ESG metric tracking and visualization.
+    </p>
+  </div>
+  <!-- Project 5 -->
+
+  <div class="project-card">
+    <div class="project-images">
+      <a href="assets/img/portfolio/mhl1.PNG" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ESG Compliance Dashboard - Screenshot 1">
+        <img src="assets/img/portfolio/mhl1.PNG" alt="ESG Dashboard Screenshot 1">
+      </a>
+    </div>
+    <h4>MHL Product Catalogs</h4>
+    <p><strong>Role:</strong> Angular UI Developer</p>
+    <p>
+      Converted design prototypes into interactive Landing page for MHL Product Catalogs and responsive.
+    </p>
+  </div>
+
+</div>
+
+
+    </section>
+
+
+    <!-- Add Previous Project -->
+
     <!-- ======= Portfolio Section ======= -->
     <style>
       /* Container and Section Styling */
+
+
       #portfolio {
         background-color: #f8f9fa;
         padding: 60px 0;
@@ -568,17 +839,6 @@
       }
 
       /* Project Card */
-      .project-card {
-        background-color: #ffffff;
-        border-radius: 12px;
-        padding: 30px;
-        margin-bottom: 40px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        flex-wrap: wrap;
-      }
 
       .project-card .project-text {
         flex: 1 1 400px;
@@ -618,37 +878,38 @@
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
-.project-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  margin-bottom: 30px;
-}
 
-.project-card .project-image img {
-  border-radius: 12px;
-  max-width: 100%;
-  height: auto;
-}
+      .project-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
 
-.project-card .project-text {
-  max-width: 50%;
-}
+      .project-card .project-image img {
+        border-radius: 12px;
+        max-width: 100%;
+        height: auto;
+      }
 
-.project-card .project-links a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-  margin-right: 10px;
-}
+      .project-card .project-text {
+        max-width: 50%;
+      }
 
-.project-card .project-links a:hover {
-  text-decoration: underline;
-}
+      .project-card .project-links a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-right: 10px;
+      }
+
+      .project-card .project-links a:hover {
+        text-decoration: underline;
+      }
 
       @media (max-width: 992px) {
         .project-card {
@@ -777,7 +1038,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Portfolio</h2>
+          <h2>My Personal Web Projects</h2>
           <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
             consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
             in iste officiis commodi quidem hic quas.</p> -->
@@ -835,7 +1096,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-office">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-office">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/mhl1.PNG" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -845,7 +1106,7 @@
                     class="bx bx-link"></i></a>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/ask16.PNG" class="img-fluid" alt="">
@@ -932,7 +1193,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-office">
+          <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-app filter-office">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/byn.PNG" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -942,7 +1203,7 @@
                     class="bx bx-link"></i></a>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
@@ -974,6 +1235,8 @@
       </div>
     </section>
     <!-- End Portfolio Section -->
+
+
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
