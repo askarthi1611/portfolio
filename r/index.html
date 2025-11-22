@@ -2,70 +2,133 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Document Tab Viewer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Document Viewer</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
     }
 
+    /* ----------- TOP BAR (Desktop + Mobile) ------------ */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      color: white;
+      padding: 10px 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar-title {
+      font-size: 18px;
+    }
+
+    /* ----------- Menu Button (Mobile Only) ------------ */
+    .menu-btn {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    /* ----------- Tabs (Desktop Only) ------------ */
     .tabs {
       display: flex;
-      background-color: #333;
+      background: #333;
       overflow-x: auto;
       white-space: nowrap;
       flex-wrap: wrap;
       gap: 5px;
-      position:sticky;
-      top: 0;
+      padding: 10px;
     }
 
     .tab {
-      padding: 14px 16px;
+      padding: 12px 16px;
       color: white;
       cursor: pointer;
-      background-color: #333;
+      background-color: #444;
       border: none;
       outline: none;
-      transition: background-color 0.3s;
-      flex-shrink: 0;
+      transition: 0.3s;
+      border-radius: 4px;
     }
 
     .tab:hover {
-      background-color: #555;
+      background-color: #666;
     }
 
     .tab.active {
       background-color: #0078d7;
     }
 
-    iframe,
-    #docx-viewer {
-      width: 100%;
-      height: calc(100vh - 50px);
-      border: none;
+    /* ----------- Mobile Menu Drawer ------------ */
+    .mobile-menu {
       display: none;
+      flex-direction: column;
+      background: #222;
+      padding: 10px;
     }
 
-    .active {
+    .mobile-menu .tab {
+      margin-bottom: 6px;
+      width: 100%;
+      text-align: left;
+    }
+
+    /* ---- Viewer ---- */
+    iframe,
+    .docx-viewer {
+      width: 100%;
+      height: calc(100vh - 60px);
+      border: none;
+      display: none;
+      overflow-y: auto;
+    }
+
+    .active-viewer {
       display: block !important;
+    }
+
+    /* ------- RESPONSIVE ------- */
+    @media (max-width: 768px) {
+      .tabs {
+        display: none !important;
+        /* hide desktop tabs */
+      }
+
+      .menu-btn {
+        display: block;
+        /* show menu icon */
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-title">Documents</div>
+    <div class="menu-btn" onclick="toggleMobileMenu()">☰</div>
+  </div>
+
+  <!-- DESKTOP TABS -->
   <div class="tabs" id="tabs"></div>
+
+  <!-- MOBILE MENU (Hidden initially) -->
+  <div class="mobile-menu" id="mobileMenu"></div>
+
   <div id="viewer"></div>
 
-  <!-- Mammoth.js for DOCX rendering -->
   <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
 
   <script>
-
-    // Your files list
     const docFiles = [
       "doc/Interview.pdf",
       "doc/book.pdf",
@@ -79,63 +142,73 @@
     ];
 
     const tabsContainer = document.getElementById("tabs");
+    const mobileMenu = document.getElementById("mobileMenu");
     const viewerContainer = document.getElementById("viewer");
 
     docFiles.forEach((file, index) => {
       const fileName = file.split("/").pop();
       const ext = file.split(".").pop().toLowerCase();
+      const label = fileName.replace(/\.(pdf|docx|doc)/, "");
 
-      // Create Tab
-      const tab = document.createElement("button");
-      tab.classList.add("tab");
-      if (index === 0) tab.classList.add("active");
-      tab.textContent = fileName.replace(/\.(pdf|docx|doc)/, "");
-      tab.addEventListener("click", () => showDoc(index));
-      tabsContainer.appendChild(tab);
+      const createTabButton = () => {
+        const btn = document.createElement("button");
+        btn.classList.add("tab");
+        if (index === 2) btn.classList.add("active");  // Default tab = 3rd item
+        btn.textContent = label;
+        btn.addEventListener("click", () => showDoc(index));
+        return btn;
+      };
 
-      // Create viewer element
-      let viewerElement;
+      const desktopTab = createTabButton();
+      const mobileTab = createTabButton();
+      tabsContainer.appendChild(desktopTab);
+      mobileMenu.appendChild(mobileTab);
+
+      let viewer;
 
       if (ext === "pdf") {
-        // PDF iframe
-        viewerElement = document.createElement("iframe");
-        viewerElement.src = "./../" + file;
-      }
-      else if (ext === "docx" || ext === "doc") {
-        // DOCX HTML container
-        viewerElement = document.createElement("div");
-        viewerElement.id = "docx-viewer-" + index;
-        viewerElement.style.padding = "20px";
+        viewer = document.createElement("iframe");
+        viewer.src = "./../" + file;
+      } else {
+        viewer = document.createElement("div");
+        viewer.classList.add("docx-viewer");
+        viewer.style.padding = "20px";
 
-        // Load DOCX → HTML
         fetch("./../" + file)
           .then(res => res.arrayBuffer())
-          .then(buffer => mammoth.convertToHtml({ arrayBuffer: buffer }))
-          .then(result => viewerElement.innerHTML = result.value)
-          .catch(err => viewerElement.innerHTML = "Error loading DOCX file.");
+          .then(buf => mammoth.convertToHtml({ arrayBuffer: buf }))
+          .then(html => viewer.innerHTML = html.value)
+          .catch(() => viewer.innerHTML = "Error loading document");
       }
 
-      if (index === 0) {
-        viewerElement.classList.add("active");
-      } else {
-        viewerElement.style.display='none'
-      }
-      viewerContainer.appendChild(viewerElement);
+      if (index === 2) viewer.classList.add("active-viewer"); // Default viewer = 3rd tab
+
+      viewerContainer.appendChild(viewer);
     });
+
 
     function showDoc(index) {
       const viewers = viewerContainer.children;
-      const tabs = document.querySelectorAll(".tab");
+      const allTabs = document.querySelectorAll(".tab");
 
+      // Update viewers
       Array.from(viewers).forEach((v, i) => {
-        v.classList.toggle("active", i === index);
+        v.classList.toggle("active-viewer", i === index);
       });
 
-      tabs.forEach((t, i) => {
+      // Update tab highlight
+      allTabs.forEach((t, i) => {
         t.classList.toggle("active", i === index);
       });
+
+      // Close mobile menu after click
+      mobileMenu.style.display = "none";
     }
 
+    function toggleMobileMenu() {
+      mobileMenu.style.display =
+        mobileMenu.style.display === "flex" ? "none" : "flex";
+    }
   </script>
 
 </body>
