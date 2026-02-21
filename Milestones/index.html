@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthikeyan S | Career Timeline</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #0f172a;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Scroll Progress Bar */
+        #progressBar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #00f5ff, #7c3aed);
+            z-index: 9999;
+            box-shadow: 0 0 15px #00f5ff;
+        }
+
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 0;
+        }
+
+        /* Vertical glowing line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 97%;
+            background: linear-gradient(to bottom, #00f5ff, #7c3aed);
+            transform: translateX(-50%);
+            box-shadow: 0 0 25px #00f5ff;
+        }
+
+        /* Moving dot with pause */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            background: #7c3aed;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 25px #7c3aed;
+            animation: moveDot 14s ease-in-out infinite;
+        }
+
+        @keyframes moveDot {
+            0% {
+                top: 100%;
+            }
+
+            20% {
+                top: 85%;
+            }
+
+            30% {
+                top: 65%;
+            }
+
+            45% {
+                top: 50%;
+            }
+
+            55% {
+                top: 35%;
+            }
+
+            70% {
+                top: 20%;
+            }
+
+            80% {
+                top: 5%;
+            }
+
+            100% {
+                top: 0%;
+            }
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 40px;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s ease;
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        /* Pulsing nodes */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            width: 18px;
+            height: 18px;
+            background: #00f5ff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #00f5ff;
+            animation: pulseNode 2s infinite;
+        }
+
+        .timeline-item.left::before {
+            right: -10px;
+        }
+
+        .timeline-item.right::before {
+            left: -10px;
+        }
+
+        @keyframes pulseNode {
+            0% {
+                box-shadow: 0 0 10px #00f5ff;
+            }
+
+            50% {
+                box-shadow: 0 0 35px #00f5ff;
+            }
+
+            100% {
+                box-shadow: 0 0 10px #00f5ff;
+            }
+        }
+
+        /* Glassmorphism Card */
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.08);
+            transition: 0.4s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.3);
+        }
+
+        /* Glow increase when visible */
+        .timeline-item.active .timeline-content {
+            box-shadow: 0 0 80px rgba(0, 255, 255, 0.6);
+        }
+
+        /* PDF preview */
+        .timeline-content iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 15px;
+        }
+
+        /* Duration text */
+        .duration {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Particle spark */
+        .spark {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #00f5ff;
+            border-radius: 50%;
+            animation: sparkFly 1.5s linear infinite;
+        }
+
+        @keyframes sparkFly {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(20px, -20px);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 992px) {
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 20px;
+            }
+
+            .timeline-item.left,
+            .timeline-item.right {
+                left: 0;
+                text-align: left;
+            }
+
+            .timeline-item::before {
+                left: 10px;
+            }
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .home-btn .btn {
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 8px 18px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        .home-btn .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px #00f5ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="progressBar"></div>
+    <!-- Home Button -->
+    <div class="home-btn">
+        <a href="../index.html" class="btn btn-outline-info">
+            ⬅ Back to Home
+        </a>
+    </div>
+
+    <div class="container text-center mt-5">
+        <h2 class="fw-bold">🚀 Career & Education Timeline</h2>
+        <p class="text-secondary">Professional Journey of Karthikeyan S</p>
+    </div>
+
+    <div class="timeline">
+
+        <!-- KlioTech -->
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h4>Klio-Tech LLP</h4>
+                <p>Programmer</p>
+                <p>Chennai | Remote</p>
+                <p class="duration">July 2024 – Dec 2025 | Total: 17 Months</p>
+
+                <div class="d-flex gap-2 justify-content-end">
+                    <button class="btn btn-info btn-custom" onclick="openPDF('Relieving letter Karthikeyan S.pdf')">
+                        Preview
+                    </button>
+                    <a href="Relieving letter Karthikeyan S.pdf" download class="btn btn-success btn-custom">
+                        Download
+                    </a>
+                </div>
+
+                <iframe src="Relieving letter Karthikeyan S.pdf#toolbar=0"></iframe>
+            </div>
+        </div>
+
+        <!-- iSolve -->
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h4>iSolve Technologies</h4>
+                <p>Angular UI Developer</p>
+                <p>Mandaveli, Mylapore, Chennai.</p>
+                <p class="duration">Jan 2023 – Jun 2024 | Total: 18 Months</p>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-info btn-custom" onclick="openPDF('isolve exp letter.pdf')">
+                        Preview
+                    </button>
+                    <a href="isolve exp letter.pdf" download class="btn btn-success btn-custom">
+                        Download
+                    </a>
+                </div>
+
+                <iframe src="isolve exp letter.pdf#toolbar=0"></iframe>
+            </div>
+        </div>
+
+        <!-- Aarthi Scan -->
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h4>Aarthi Scan</h4>
+                <p>Software Developer</p>
+                <p>Vadapalani, Chennai</p>
+                <p class="duration">2021 – 2022 | Total: 12 Months</p>
+
+                <div class="d-flex gap-2 justify-content-end">
+                    <button class="btn btn-info btn-custom"
+                        onclick="openPDF('aarthi scan letter of service and relieving 2021-2022.pdf')">
+                        Preview
+                    </button>
+                    <a href="aarthi scan letter of service and relieving 2021-2022.pdf" download
+                        class="btn btn-success btn-custom">
+                        Download
+                    </a>
+                </div>
+
+                <iframe src="aarthi scan letter of service and relieving 2021-2022.pdf#toolbar=0"></iframe>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h4>Bachelor Degree</h4>
+                <p>Provisional & Consolidated Certificate</p>
+                <p class="duration">Completed: 2021</p>
+                <p>Sivakasi, Tamil Nadu</p>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-info btn-custom" onclick="openPDF('provisional certificate.pdf')">
+                        Preview
+                    </button>
+                    <a href="provisional certificate.pdf" download class="btn btn-success btn-custom">
+                        Download
+                    </a>
+                </div>
+
+                <iframe src="provisional certificate.pdf#toolbar=0"></iframe>
+                <iframe src="consolidated certificate.pdf#toolbar=0"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="pdfModal">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Full Document Preview</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="pdfFrame" style="width:100%; height:80vh;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-5">
+        <p class="text-secondary">Professional Journey of Karthikeyan S</p>
+        <h2 class="fw-bold">🚀 Career & Education Timeline</h2>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Auto scroll from top (0%) to bottom (100%) on every load
+        window.addEventListener("load", function () {
+
+            // Always start at top
+            window.scrollTo(0, 0);
+
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const duration = 4000; // 4 seconds (adjust speed here)
+
+            let startTime = null;
+
+            function autoScroll(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+
+                const scrollPosition = Math.min((progress / duration) * totalHeight, totalHeight);
+                window.scrollTo(0, scrollPosition);
+
+                if (progress < duration) {
+                    requestAnimationFrame(autoScroll);
+                }
+            }
+
+            requestAnimationFrame(autoScroll);
+        });
+        function openPDF(file) {
+            document.getElementById("pdfFrame").src = file;
+            new bootstrap.Modal(document.getElementById('pdfModal')).show();
+        }
+
+        /* Scroll reveal + glow */
+        const items = document.querySelectorAll(".timeline-item");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    entry.target.classList.add("active");
+                }
+            });
+        }, { threshold: 0.3 });
+
+        items.forEach(item => observer.observe(item));
+
+        /* Add particle sparks */
+        items.forEach(item => {
+            for (let i = 0; i < 2; i++) {
+                const spark = document.createElement('div');
+                spark.classList.add('spark');
+                spark.style.top = Math.random() * 80 + "px";
+                spark.style.left = Math.random() * 80 + "px";
+                item.appendChild(spark);
+            }
+        });
+
+        /* Scroll progress */
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.scrollY;
+            let docHeight = document.body.scrollHeight - window.innerHeight;
+            let scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById("progressBar").style.width = scrollPercent + "%";
+        });
+    </script>
+</body>
+
+</html>
